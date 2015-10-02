@@ -1,11 +1,9 @@
 ---
 layout: page
-title: Hello World!
+title: Post List
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
-
-# Post List
 
 <ul class="posts">
   {% for post in site.posts %}

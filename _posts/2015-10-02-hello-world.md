@@ -2,7 +2,7 @@
 layout: post
 title: "Hello world"
 description: ""
-category: 
+category:
 tags: []
 ---
 {% include JB/setup %}
@@ -16,6 +16,6 @@ GTD를 익숙해지게 하기 위해서 gmail에서 썼던 것처럼,
 물론 살짝 번거로움이 있지만, 이 번거로움이야 깃헙을 쓰면서 항상 느낄 수 있는 부분일테니..  
 크게 부담스럽진 않았다.
 
-rake 명령을 쓰기 위해서, 윈도우에서 ruby를 깔아야하나;;싶긴 하지만..뭐; 안해도 되겠지..
+rake 명령을 쓰기 위해서, 윈도우에서 ruby를 깔아야하나;;싶긴 하지만..뭐; 안해도 되겠지..  
 
-
+슬슬 만져봐야겠다.

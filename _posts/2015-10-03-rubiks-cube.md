@@ -7,7 +7,7 @@ tags: []
 ---
 {% include JB/setup %}
 
-![Rubiks](./assets/IMG_2122.jpg)  
+![Rubiks]({{ ASSEST_PATH }}/IMG_2122.jpg)  
 
 추석에 부모님을 뵈러 갔다가, 루빅스 큐브를 하나 사게 됐다.  
 정확히는 선물 받았다 :)  

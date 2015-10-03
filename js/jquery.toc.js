@@ -1,130 +1,20 @@
-/*
- * jQuery Table of Content Generator for Markdown v1.0
+/*!
+ * samaxesJS JavaScript Library
+ * jQuery TOC Plugin v1.1.4
+ * http://code.google.com/p/samaxesjs/
  *
- * https://github.com/dafi/tocmd-generator
- * Examples and documentation at: https://github.com/dafi/tocmd-generator
+ * Copyright (c) 2011 samaxes.com
  *
- * Requires: jQuery v1.7+
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Copyright (c) 2013 Davide Ficano
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * Dual licensed under the MIT and GPL licenses:
- *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-(function($) {
-    var toggleHTML = '<div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span></div>';
-    var tocContainerHTML = '<div id="toc-container"><table class="toc" id="toc"><tbody><tr><td>%1<ul>%2</ul></td></tr></tbody></table></div>';
-
-    function createLevelHTML(anchorId, tocLevel, tocSection, tocNumber, tocText, tocInner) {
-        var link = '<a href="#%1"><span class="tocnumber">%2</span> <span class="toctext">%3</span></a>%4'
-            .replace('%1', anchorId)
-            .replace('%2', tocNumber)
-            .replace('%3', tocText)
-            .replace('%4', tocInner ? tocInner : '');
-        return '<li class="toclevel-%1 tocsection-%2">%3</li>\n'
-            .replace('%1', tocLevel)
-            .replace('%2', tocSection)
-            .replace('%3', link);
-    }
-
-    $.fn.toc = function(settings) {
-        var config = {
-            anchorPrefix: 'tocAnchor-',
-            showAlways: false,
-            saveShowStatus: true,
-            contentsText: 'Contents',
-            hideText: 'hide',
-            showText: 'show'};
-
-        if (settings) {
-            $.extend(config, settings);
-        }
-
-        var tocHTML = '';
-        var tocLevel = 1;
-        var tocSection = 1;
-        var itemNumber = 1;
-
-        var tocContainer = $(this);
-
-        tocContainer.find('h1').each(function() {
-            var levelHTML = '';
-            var innerSection = 0;
-            var h1 = $(this);
-
-            h1.nextUntil('h1').filter('h2').each(function() {
-                ++innerSection;
-                var anchorId = config.anchorPrefix + tocLevel + '-' + tocSection + '-' +  + innerSection;
-                $(this).attr('id', anchorId);
-                levelHTML += createLevelHTML(anchorId,
-                    tocLevel + 1,
-                    tocSection + innerSection,
-                    itemNumber + '.' + innerSection,
-                    $(this).text());
-            });
-            if (levelHTML) {
-                levelHTML = '<ul>' + levelHTML + '</ul>\n';
-            }
-            var anchorId = config.anchorPrefix + tocLevel + '-' + tocSection;
-            h1.attr('id', anchorId);
-            tocHTML += createLevelHTML(anchorId,
-                tocLevel,
-                tocSection,
-                itemNumber,
-                h1.text(),
-                levelHTML);
-
-            tocSection += 1 + innerSection;
-            ++itemNumber;
-        });
-
-        var hasOnlyOneTocItem = tocLevel == 1 && tocSection <= 2;
-        var show = config.showAlways ? true : !hasOnlyOneTocItem;
-
-        // check if cookie plugin is present otherwise doesn't try to save
-        if (config.saveShowStatus && typeof($.cookie) == "undefined") {
-            config.saveShowStatus = false;
-        }
-
-        if (show && tocHTML) {
-            var replacedToggleHTML = toggleHTML
-                .replace('%1', config.contentsText)
-                .replace('%2', config.hideText);
-            var replacedTocContainer = tocContainerHTML
-                .replace('%1', replacedToggleHTML)
-                .replace('%2', tocHTML);
-            tocContainer.prepend(replacedTocContainer);
-
-            $('#toctogglelink').click(function() {
-                var ul = $($('#toc ul')[0]);
-
-                if (ul.is(':visible')) {
-                    ul.hide();
-                    $(this).text(config.showText);
-                    if (config.saveShowStatus) {
-                        $.cookie('toc-hide', '1', { expires: 365, path: '/' });
-                    }
-                    $('#toc').addClass('tochidden');
-                } else {
-                    ul.show();
-                    $(this).text(config.hideText);
-                    if (config.saveShowStatus) {
-                        $.removeCookie('toc-hide', { path: '/' });
-                    }
-                    $('#toc').removeClass('tochidden');
-                }
-                return false;
-            });
-
-            if (config.saveShowStatus && $.cookie('toc-hide')) {
-                var ul = $($('#toc ul')[0]);
-
-                ul.hide();
-                $('#toctogglelink').text(config.showText);
-                $('#toc').addClass('tochidden');
-            }
-        }
-        return this;
-    }
-})(jQuery);
+(function(d){d.fn.toc=function(j){var l=d.extend({},d.fn.toc.defaults,j);var n=this.append("<ul></ul>").children("ul");var m={h1:0,h2:0,h3:0,h4:0,h5:0,h6:0};var h=0;var g={h1:0,h2:0,h3:0,h4:0,h5:0,h6:0};for(var k=1;k<=6;k++){g["h"+k]=(l.exclude.match(new RegExp("h"+k,"i"))===null&&d("h"+k).length>0)?++h:0}return this.each(function(){d(l.context+" :header").not(l.exclude).each(function(){var p=d(this);for(var o=6;o>=1;o--){if(p.is("h"+o)){if(l.numerate){b(m["h"+o],n);c(m,"h"+o);if(l.autoId&&!p.attr("id")){p.attr("id",a(p.text()))}p.text(f(m,"h"+o,p.text()))}e(n,g["h"+o],p.attr("id"),p.text())}}})})};function b(h,g){if(h===0&&g.find(":last").length!==0&&!g.find(":last").is("ul")){g.find("li:last").append("<ul></ul>")}}function c(g,h){d.each(g,function(j,k){if(j===h){++g[j]}else{if(j>h){g[j]=0}}})}function a(g){return g.replace(/[ <>#\/\\?&\n]/g,"_")}function f(i,j,h){var g="";d.each(i,function(k,l){if(k<=j&&i[k]>0){g+=i[k]+"."}});return g+" "+h}function e(m,g,l,k){var j=m;for(var h=1;h<g;h++){if(j.find("> li:last > ul").length===0){j.append("<li><ul></ul></li>")}j=j.find("> li:last > ul:first")}if(l===""){j.append("<li>"+k+"</li>")}else{j.append('<li><a href="#'+l+'">'+k+"</a></li>")}}d.fn.toc.defaults={exclude:"h1, h5, h6",context:"",autoId:false,numerate:true}})(jQuery);

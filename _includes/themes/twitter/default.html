@@ -57,7 +57,7 @@
     {% include JB/analytics %}
     <script src="/js/jquery.toc.js"></script>
     <script>
-        $('#content').toc();
+        $('#toc').toc({exclude: 'h1, h6', autoId: true});
     </script>
   </body>
 </html>

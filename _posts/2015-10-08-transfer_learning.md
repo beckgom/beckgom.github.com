@@ -6,6 +6,8 @@ category:
 tags: []
 ---
 
+![Transfer learning](http://www.frontiersin.org/files/Articles/57731/fpsyg-04-00515-HTML/image_m/fpsyg-04-00515-g001.jpg)
+
 ## Transfer learning
 요즘 난리인 딥러닝, 문제는 훈련하는데 시간도 무지 오래 걸리고, 실제로 데이터를 얻기도 쉽지 않다는 것이 단점이다.  
 실제로 최신 GPU 몇개를 달고도 몇일씩 걸리는 것이 기본이고, 데이터 드리븐 컴퍼니가 아닌한, 데이터를 얻기도...쉽지가 않다.  
@@ -21,6 +23,7 @@ image-net으로 만들어 놓은 pre-trained model에 (full DB) / 10 만 이용�
 pre-trained model을 사용하지 않은 것에 비해서 꽤나 좋은 결과가 나타났다. 게다가 full DB를 돌리는 것과 비교해서도 시간적으로도
 1 / 10 정도만 들었다. `굉장히 큰 장점이라고 볼 수 있겠다.` 기본적으로 무엇인가 직접 적용할려고 들면 훈련 데이터를 초반에 수집하는 것이 쉽지 않은데,
 transfer learning을 통해서 초기 모델을 만들어 놓고, 이를 가지고 semi-manual로 접근을 하면 빠르고 deploy할 수 있기 때문이다.
+물론 1 / 10 의 데이터라고 해도 충분히 큰;; 숫자다.
 
 
 ## 확장 가능성 및 돌려보면서 느낀 점

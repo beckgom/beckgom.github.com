@@ -3,7 +3,7 @@ layout: post
 title: "Learning rate의 중요성"
 description: ""
 category:
-tags: []
+tags: [DNN]
 ---
 ![learning rate](https://wingshore.files.wordpress.com/2014/11/alpha3.png?w=662)
 

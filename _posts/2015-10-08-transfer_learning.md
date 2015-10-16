@@ -3,7 +3,7 @@ layout: post
 title: "transfer learning"
 description: ""
 category:
-tags: []
+tags: [DNN]
 ---
 
 ![Transfer learning](http://www.frontiersin.org/files/Articles/57731/fpsyg-04-00515-HTML/image_m/fpsyg-04-00515-g001.jpg)

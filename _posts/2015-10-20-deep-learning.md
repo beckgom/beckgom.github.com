@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "deep learning의 세계"
+title: "Deep learning의 세계"
 description: ""
 category:
-tags: [deep, learning]
+tags: [DNN]
 ---
 
 ## Deep learning

@@ -1,2 +1,2 @@
-# Beckgom's blos
+# Beckgom's blog
 

@@ -24,7 +24,7 @@ Accelerating Recurrent Network Training for **Long** or **Event-based** (aka asy
 
 요게 Phased LSTM에 대한 구조도
 그림만으로 이해해보자면,
-* $t$라는 것이 입력으로 들어가고,
+* $$t$$라는 것이 입력으로 들어가고,
 * 그것이 $k_t$를 결정하고,
 * 이에 따라서 memory와 hidden에 대한 값이 영향을 받는다. 
 * 기타 path가 바뀌는 부분이 있는데 이 차이는 minor
@@ -131,6 +131,7 @@ sine wave가 존재할 때,
 실제로 이 task를 하나의 sine wave가 아니라 2개의 sine wave로 바꾸어 연산하더라도, phased LSTM의 경우 빠르게 converge되는 것을 볼 수 있다. 그 learning curve는 
 
 ![](/assets/Phased_LSTM/1915F4B5-B368-4273-92B5-476CA33B4608.png)
+
 bold line은 여러번 테스트한 것의 mean값을 나타내고, transparency로 표현한 area는 여러번 테스트 했을 때 나오는 variance 구간이다.
 실제로 variance도 적은 것을 확인할 수 있다. 이것도 *큰 장점*인듯
 
@@ -138,6 +139,7 @@ bold line은 여러번 테스트한 것의 mean값을 나타내고, transparency
 이 task에 대한 자세한 설명은 [16]을 참고하면 된다.
 S. Hochreiter and J. Schmidhuber. Long short-term memory. Neural Computation, 9(8):1735–1780, 1997.
 ![](/assets/Phased_LSTM/5372DB6D-B2A7-4CE3-BA9D-85BC609402BB.png)
+
 정리하면, 입력이 2차원 벡터다. 1차에는 [-1, 1] 실수가, 2차에는 1, 0, -1이 들어있다. 이 중에서 1인 숫자들만 더한 결과를 뽑는 것이 목표이다.
 T를 설정하면 첫번째와 T/2-1 번째 성분만 2차에 1을 설정하고 나머지는 0 대신에 T/2와 맨 마지막 성분에는 -1를 설정한다.
 이럴 때 실제로 2차에 1로 설정된 결과의 합만 잘 구하는지 보는 것
@@ -159,12 +161,17 @@ np.exp(6)은 403 np.exp(8)은 2980인데, T가 500인 경우니까 이 경우가
 
 ### Task 3: N-MNIST Event-Based Visual Recognition
 N-MNIST에 대한 정보부터 찾아보자;;;
+
 G. Orchard, A. Jayawant, G. Cohen, and N. Thakor. Converting static image datasets to spiking neuromor-
 phic datasets using saccades. arXiv: 1507.07629, 2015
+
 https://arxiv.org/abs/1507.07629
+
 ~~아아,, 이건 내가 할 수 있는 범위가 아니다.~~
 ~~동영상을 봐도 모하겠다는 것인지 모르겠고 알고 싶지도 않다;~~
+
 [Converting Static Images to Neuromorphic Datasets - YouTube](https://www.youtube.com/watch?v=2RBKNhxHvdw&feature=youtu.be)
+
 [Neuromorphic Caltech101 data - YouTube](https://www.youtube.com/watch?v=dxit9Ce5f_E&feature=youtu.be)
 
 ### Task 4: Visual-Auditory Sensor Fusion for Lip Reading

@@ -1,26 +1,11 @@
----
-theme :
-  name : twitter
----
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
-
-{% include JB/setup %}
-{% include themes/twitter/default.html %}
-
-
-$("script[type='math/tex']").replaceWith(
-  function(){
-    var tex = $(this).text();
-    return "<span class=\"inline-equation\">" + 
-           katex.renderToString(tex) +
-           "</span>";
-});
-
-$("script[type='math/tex; mode=display']").replaceWith(
-  function(){
-    var tex = $(this).text();
-    return "<div class=\"equation\">" + 
-           katex.renderToString("\\displaystyle "+tex) +
-           "</div>";
-});
+<!DOCTYPE html>
+<html class="no-js">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    <div class="content">
+      {{ content }}
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

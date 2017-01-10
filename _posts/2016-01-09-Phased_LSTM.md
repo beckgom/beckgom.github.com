@@ -7,18 +7,21 @@ tags: [LSTM, paper]
 ---
 
 # Phased_LSTM
+
 ## Accelerating Recurrent Network Training for Long or Event-based Sequences
 부제만 잘 읽어도 이게 뭘하려는 것인지 알 수 있음.
 Accelerating Recurrent Network Training for **Long** or **Event-based** (aka async) Sequences
 
 ## 기본 LSTM 구조도
 ![](/assets/Phased_LSTM/DE7C22F3-56F0-414A-8829-0BF28268960E.png)
+
 이게 일반 LSTM에 대한 구조도. 
 기본 LSTM 내용은 기존에 많이 다뤄졌을테니 그림 정도 소개로 넘어간다.
 
 
 ## Phased LSTM 구조도
 ![](/assets/Phased_LSTM/5DE63D84-FFE2-4BEC-BE55-7D090BF00E79.png)
+
 요게 Phased LSTM에 대한 구조도
 그림만으로 이해해보자면,
 * $t$라는 것이 입력으로 들어가고,
@@ -28,6 +31,7 @@ Accelerating Recurrent Network Training for **Long** or **Event-based** (aka asy
 
 ## 기본 LSTM 수식
 ![](/assets/Phased_LSTM/EA8AC8A7-903E-44BA-9922-B23C41665419.png)
+
 기본적인 LSTM에 대한 수식이다. 우선, 다 안다고 가정하고..
 이 수식이 다음과 같이 변하면서 추가된다.
  자세한 내용은 뒤에서 더 언급하고,
@@ -45,17 +49,22 @@ Accelerating Recurrent Network Training for **Long** or **Event-based** (aka asy
 > 특징은 이 3가지 파라미터 모두가 훈련 과정에서 학습된다는 점!!  
 
 이 내용을 그림으로 표현하면,
+
 ![](/assets/Phased_LSTM/3B35EA35-1E17-44B8-A91F-152B41699C49.png)
+
 이렇게 보면 되겠다.
 위에 green line이 실제 $k_t$에 대한 값이라고 보면 된다.
 들어오는 $t$에 의해 계산되는 $k_t$의 값은 
+
 ![](/assets/Phased_LSTM/763FB73A-DB5D-45BF-BD33-F3C5200CC99E.png)
+
 라고 보면 된다. 
 
 조금 복잡해 보일 수 있지만, 찬찬히 뜯어보면 위에 green line을 그대로 수식화 한 것으라고 볼 수 있다. 그림하고 비교할 때, close phase가 leaky 처리한다는 점과, open phase의 최대값이 1인 것을 염두하고 보면 쉽게 이해할 수 있다.
 
 ## Phased LSTM 수식
 ![](/assets/Phased_LSTM/9E823154-11CD-4250-B774-4BC86BA393D7%201.png)
+
 뭔가 수식이 더 단순에 보이는데, 메모리와 hidden에 대한 변경사항만 추가한 것이다. input, output, forget은 기존 LSTM과 동일하게 사용한다. 
 
 Phased LSTM 구조도에서는 $\tilde{h_j}$에 대한 표현이 없는데, `time gate`에 들어가기 전에 신호를 $\tilde{h_j}$라고 보면 된다. 
@@ -66,6 +75,7 @@ Phased LSTM 구조도에서는 $\tilde{h_j}$에 대한 표현이 없는데, `tim
 
 ## Phased LSTM 동작 그림
 ![](/assets/Phased_LSTM/C2E2D034-2264-40C4-9AF2-27C6EAA2D655.png)
+
 입력은 같은 상태에서 `time gate` 차이가 발생함에 따라 내부 메모리가 어떤 값을 가지게 되는지를 나타낸 것이다. 맨 위에 입력 하나에 $k_t$ 하나, $c_t$ 하나를 묶어서 pair로 해석하면 된다.
 
 보면 이해할 수 있겠지만, $\tau$만 변화를 주고, $s$와 $r_{on}$은 고정을 해놓은 경우라고 볼 수 있다. 그에 따라 실제로 gate가 열릴 때만 $c_t$가 학습되는 거라고 볼 수 있겠다. 뭐 그렇게 만들었으니 당연하겠지만;;
@@ -78,6 +88,7 @@ Phased LSTM 구조도에서는 $\tilde{h_j}$에 대한 표현이 없는데, `tim
 이에 대한 간략한 실험은 뒤에서 소개된다.
 
 ## 실험을 설명하기에 앞서,
+
 * Theano, Lasagne를 이용해서 구현하였고
 * adam을 optimizer로 이용했다. 
 * Close 구간에서는 훈련할 때는 \alpha를 0.001로 하고 test에서는 0으로 설정하였다.
@@ -99,6 +110,7 @@ phased LSTM은 $t$ 정보를 추가로 가지고 가는 꼴이 되니까,
 나머지 둘은 $t$를 포함하니까 2-110-2의 구조를 가진다.
 
 ![](/assets/Phased_LSTM/F094DCFB-5CF7-422C-BEFE-29BE70559A8D.png)
+
 비교 대상은 3개고,
 
 비교할 데이터도 3종류다.
@@ -108,7 +120,9 @@ sine wave가 존재할 때,
 * 0.1 ms 마다 sampling을 할 경우 (oversampling, high resolution)
 * 1ms 마다 한 경우와 동일한 수를 sampling하되 sampling 구간은 무작위로 (async sampling)
 
-결과를 보면 분류하는 성능이 제안한 Phased LSTM이 월등하게 좋을 것으로 나타난다. *뭐 그런줄 알았는데!!*
+결과를 보면 분류하는 성능이 제안한 Phased LSTM이 월등하게 좋을 것으로 나타난다. 
+
+*뭐 그런줄 알았는데!!*
 
 사실은 최종 성능이 월등하게 좋아진다는 것은 아니고 70 epoch에서 저렇게 차이가 난다는 것이고, 오래오래 돌리다보면 high resolution의 경우 base line (standard sampling) 정도 수준으로 올라오긴 한다.
 
@@ -138,6 +152,7 @@ T를 설정하면 첫번째와 T/2-1 번째 성분만 2차에 1을 설정하고 
 
 
 ![](/assets/Phased_LSTM/A959E412-6FC7-4E23-8C56-DDEC62E9528D.png)
+
 ~~$\tau$에 대한 설명이 추가로 들어가야하는데 아직 이해를 못하겠 ㅠ.ㅠ~~
 np.exp(6)은 403 np.exp(8)은 2980인데, T가 500인 경우니까 이 경우가 제일 잘 되는듯,
 > 사실 두 수에 간격은 절반인 250이 되는데, $\tau$가 250 이상이라고 하더라도 두 수가 각각 다른 unit cell에 저장된다고 보면 250 이상이더라도 동작하는데 문제는 없을 것 같음.  
@@ -169,6 +184,7 @@ GRID라는 DB를 이용하는데, 30명에 대해서 1,000 문장을 발화하�
 
 음성은 39차 MFCC를 만들고 (13에, delta, delta-delta) 
 샘플을 보면 다음과 같다.
+
 ![](/assets/Phased_LSTM/106D0D63-5C4C-4190-A2CE-16416F19719C.png)
 
 #### Networks
@@ -180,6 +196,7 @@ GRID라는 DB를 이용하는데, 30명에 대해서 1,000 문장을 발화하�
 그림으로 표현하면
 
 ![](/assets/Phased_LSTM/42DF96F5-8A62-4CAF-B7D6-D3D2F0C8C32E.png)
+
 오디오랑 비디오가 사실 frame이 맞지 않는다. 비디오는 25 ftp고 오디오는 10 ms 단위로 MFCC를 뽑으니까.. 이런 측면에서는 phased LSTM이 효과적일 것 같긴하다.
 $\tau$ 하고 $s$는 audio/video PLSTM에 대해서 고정해놓고 사용한다. 나머지에 대해서는 훈련을 통해서 획득한다. 보면 알겠지만 $k_t$는 hidden unit만큼 존재한다.
 
@@ -193,6 +210,7 @@ $\tau$ 하고 $s$는 audio/video PLSTM에 대해서 고정해놓고 사용한다
 
 ## 정리
 $t$ 정보를 활용할 수 있는 Phased LSTM를 제안했다.
+
 * 장점으로는 
 	* 빠르게 converge
 	* Async. 조건에서도 성능이 잘나오고,

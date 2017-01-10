@@ -39,21 +39,21 @@
 
 ### depth를 조절하라.
 
-![](/assest/2016-01-10-one_page_report/96861A4F-AFC3-4C4C-B592-80993862BA92.png)
+![](/assets/2016-01-10-one_page_report/96861A4F-AFC3-4C4C-B592-80993862BA92.png)
 
 위의 내용이 목표치라고 보면 된다.  
 이렇게 하면 얻는 이득은 2가지.  
 빠르게 키워드와 구조화된 내용을 이해할 수 있다는 점이다.  
 즉, 사람들은 아래와 같이 이해를 한다.  
 
-![](/assest/2016-01-10-one_page_report/F51FDF0F-842B-4C20-9980-65C5E8EE6823.png)
+![](/assets/2016-01-10-one_page_report/F51FDF0F-842B-4C20-9980-65C5E8EE6823.png)
 
-![](/assest/2016-01-10-one_page_report/7A165762-F185-4C89-BF1B-E1E3492BDBFC.png)
+![](/assets/2016-01-10-one_page_report/7A165762-F185-4C89-BF1B-E1E3492BDBFC.png)
 
 구조상으로 보면 알겠지만 중요한 내용이 앞으로 나오게 두괄식으로 전달하는 것이 좋고,  
 중요한 메시지일수록 상단, 좌상단을 이용하는 것이 좋다. 
 
-![](/assest/2016-01-10-one_page_report/A21F2078-0EFA-4A34-BFEF-E12BBE74CC1E.png)
+![](/assets/2016-01-10-one_page_report/A21F2078-0EFA-4A34-BFEF-E12BBE74CC1E.png)
 
 전체적인 느낌을 봤을 때 적어도 최악은 아닌지를 확인할 필요가 있다.
 
@@ -63,7 +63,7 @@
 우선은 사전에 자료를 본적이 없고 내 입을 통해서 처음 듣는 것으로 간주하고 시작하라.  
 그렇게 때문에 듣는 입장에서 구조화 해서 전달하는 것이 중요하다.
 
-![](/assest/2016-01-10-one_page_report/00CDB123-48AC-4D61-B586-CA982A69D273.png)
+![](/assets/2016-01-10-one_page_report/00CDB123-48AC-4D61-B586-CA982A69D273.png)
 
 이런 식으로 1단계 에서 2단계로 들어가면서 2단계에 해당하는 부분 전부를 간략하게  
 설명하고 3단계로 들어가는 방법으로 하는 것이다.  

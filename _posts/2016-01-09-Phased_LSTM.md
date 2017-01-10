@@ -160,8 +160,9 @@ T를 설정하면 첫번째와 T/2-1 번째 성분만 2차에 1을 설정하고 
 
 ![](/assets/Phased_LSTM/A959E412-6FC7-4E23-8C56-DDEC62E9528D.png)
 
-~~$$\tau$$에 대한 설명이 추가로 들어가야하는데 아직 이해를 못하겠 ㅠ.ㅠ~~
-np.exp(6)은 403 np.exp(8)은 2980인데, T가 500인 경우니까 이 경우가 제일 잘 되는듯,
+~~$$\tau$$에 대한 설명이 추가로 들어가야하는데 아직 이해를 못하겠 ㅠ.ㅠ~~  
+np.exp(6)은 403 np.exp(8)은 2980인데, T가 500인 경우니까 이 경우가 제일 잘 되는듯,  
+
 > 사실 두 수에 간격은 절반인 250이 되는데, $$\tau$$가 250 이상이라고 하더라도 두 수가 각각 다른 unit cell에 저장된다고 보면 250 이상이더라도 동작하는데 문제는 없을 것 같음.  
 
 ### Task 3: N-MNIST Event-Based Visual Recognition
@@ -172,8 +173,8 @@ phic datasets using saccades. arXiv: 1507.07629, 2015
 
 https://arxiv.org/abs/1507.07629
 
-~~아아,, 이건 내가 할 수 있는 범위가 아니다.~~
-~~동영상을 봐도 모하겠다는 것인지 모르겠고 알고 싶지도 않다;~~
+~~아아,, 이건 내가 할 수 있는 범위가 아니다.~~  
+~~동영상을 봐도 모하겠다는 것인지 모르겠고 알고 싶지도 않다;~~  
 
 [Converting Static Images to Neuromorphic Datasets - YouTube](https://www.youtube.com/watch?v=2RBKNhxHvdw&feature=youtu.be)
 

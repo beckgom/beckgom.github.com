@@ -1,5 +1,7 @@
 # 한장 보고서 쓰기
 
+정말 인상 깊게 읽은 글이 있어서 정리해본다.
+
 링크는 아래에서 ….    
 
 [한 장 보고서 어떻게 쓸 것인가? – ② - ‘Startup’s Story Platform’](http://platum.kr/archives/58795)

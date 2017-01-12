@@ -1,4 +1,11 @@
-# Keras - Tokenizer base_filter()
+---
+layout: post
+title: "Keras - Masking layer"
+description: ""
+category:
+tags: [deep learning, keras]
+---
+# Keras-Tokenizer base_filter
 
 링크는 여기에…
 

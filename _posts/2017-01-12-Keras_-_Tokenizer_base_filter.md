@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Keras - Tokenizer base_filter()”
+title: "Keras - Tokenizer base_filter”
 description: ""
 category:
 tags: [deep learning, keras]

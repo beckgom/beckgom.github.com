@@ -5,8 +5,8 @@ description: ""
 category:
 tags: [deep learning, keras]
 ---
-
 # Keras - Tokenizer base_filter()
+
 링크는 여기에…
 
 https://keras.io/preprocessing/text/#tokenizer

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Keras - Masking layer"
+title: "Keras - base filter"
 description: ""
 category:
 tags: [deep learning, keras]

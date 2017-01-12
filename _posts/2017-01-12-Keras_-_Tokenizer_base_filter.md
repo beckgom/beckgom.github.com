@@ -9,7 +9,7 @@ tags: [deep learning, keras]
 
 링크는 여기에…
 
-https://keras.io/preprocessing/text/#tokenizer
+[Text Preprocessing - Keras Documentation](https://keras.io/preprocessing/text/#tokenizer)
 
 ## Text Preprocessing
 ![](/assets/2017-01-12-Keras_-_Tokenizer_base_filter/F860E347-15C1-40A8-A51B-14E3243D3D70.png)

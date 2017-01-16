@@ -11,7 +11,7 @@ tags: [deep learning, keras]
 
 내용을 보자.
 
-![](/assets/2017-01-16-Keras_Layer_%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5/614972BE-E59D-4F72-A033-B59BACA72227.png)
+![](/assets/2017-01-16-Keras_Layer_/614972BE-E59D-4F72-A033-B59BACA72227.png)
 
 기본 제약 사항이 `keras==1.1.3` 이상이다. 요즘에는 1.2.0을 쓰니까 현재는 상관하지 않아도 될 것 같다.
 

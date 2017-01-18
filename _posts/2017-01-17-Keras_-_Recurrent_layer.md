@@ -26,7 +26,7 @@ keras.layers.recurrent.Recurrent(weights=None, return_sequences=False, go_backwa
 
 
 ## Arguments
-![](Keras_-_Recurrent_layer/D276F17D-5DE2-4C9B-873E-63D1C7676443.png)
+![](/assets/Keras_-_Recurrent_layer/D276F17D-5DE2-4C9B-873E-63D1C7676443.png)
 
 좀 길다;;;;;;
 

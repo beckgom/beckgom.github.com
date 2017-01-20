@@ -21,7 +21,8 @@ keras.layers.convolutional.Deconvolution2D(nb_filter, nb_row, nb_col, output_sha
 ```
 
 
-대부분은 convolution과 유사하다. 다만 달라지는 부분만 좀 알아보려고 한다.
+대부분은 convolution과 유사하다.  
+다만 달라지는 부분만 좀 알아보려고 한다.
 
 ## Arguments
 
@@ -36,7 +37,7 @@ keras.layers.convolutional.Deconvolution2D(nb_filter, nb_row, nb_col, output_sha
 
 * output_shape:
 	* (nb_sample, nb_filter, nb_output_rows, nb_output_cols)의 튜플 방식으로 사용한다. 이거를 계산하는 수식이 있는데 다음과 같다.
-	* $$o = s (i - 1) + a + k - 2p, \quad a \in {0, \ldots, s - 1}$$
+	$$o = s (i - 1) + a + k - 2p, \quad a \in {0, \ldots, s - 1}$$
 
 	
 ## 정리

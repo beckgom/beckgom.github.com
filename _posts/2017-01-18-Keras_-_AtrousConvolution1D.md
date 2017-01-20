@@ -19,7 +19,7 @@ tags: [deep learning, keras]
 
 `wavenet`에서 사용하는 그것이다.
 
-[WaveNet: A Generative Model for Raw Audio | DeepMind](https://deepmind.com/blog/wavenet-generative-model-raw-audio/)
+[WaveNet: A Generative Model for Raw Audio DeepMind](https://deepmind.com/blog/wavenet-generative-model-raw-audio/)
 
 그럼 한번 살펴보자.
 
@@ -73,7 +73,7 @@ keras.layers.convolutional.AtrousConvolution1D(nb_filter, filter_length, init='g
 * input_dim:
 	* `input_shape`과 동일한 term
 * input_length:
-	* [Keras - Recurrent layer | beckgom’s fabular](http://beckgom.github.io/2017/01/17/Keras_-_Recurrent_layer.html)의 ` input_length`와 동일한 의미
+	* [Keras - Recurrent layer, beckgom’s fabular](http://beckgom.github.io/2017/01/17/Keras_-_Recurrent_layer.html)의 ` input_length`와 동일한 의미
 
 
 ## 정리

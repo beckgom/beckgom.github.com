@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Keras - Convolution3D"
+description: ""
+category:
+tags: [deep learning, keras]
+---
 # Keras - Convolution3D
 링크는 여기에…
 [Convolutional Layers - Keras Documentation](https://keras.io/layers/convolutional/#convolution3d)

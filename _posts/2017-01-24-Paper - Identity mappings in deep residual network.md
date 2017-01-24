@@ -110,4 +110,4 @@ Imagenet의 경우에는 200 layer에서 8개 써서 3주 (-_-a) 떱…
 * skip connection
 	* [Skip connection](bear://x-callback-url/open-note?id=90229FA9-DFAE-4C40-A9F2-B4AA0DDA5ACB-27241-000096B8D24295B0)
 * 속도 대비로 성능이..?
-	* 속도 생각하면 inception으로 하는 것이 좋지, 구지 depth를 막 늘려갈 필요가 있을까?
+	* 속도 생각하면 inception으로 하는 것이 좋지, 구지 depth를 막 늘려갈 필요가 있을까? (기호님 의견이고 강하게 동의..)

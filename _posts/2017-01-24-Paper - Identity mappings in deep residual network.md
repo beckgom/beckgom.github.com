@@ -103,6 +103,7 @@ Imagenet의 경우에는 200 layer에서 8개 써서 3주 (-_-a) 떱…
 * 맨 처음 입력부터 residual에 bn, relu를 적용하는 것인지?
 	* 정확히는 모듈 시작하기 전에 conv layer가 하나 존재한다.
 	* 그리고 depth가 바뀌는 부분들이 존재하는데 거기의 경우에는 1x1 conv로 결국 filtering하는 컨셉이다.
+		* 보다 정확히는 projection이라는 용어를 쓴다.
 	* 즉, identity mapping 에 해당하는 녀석이 맨마지막까지 완전히 identity로 쭈욱 아니고, 같은 모듈 안에서 처리하는 것이라고 보면 되겠음.
 * 러닝레이트는? 
 	* 맨 뒤에 detail에 적어놓은 것 봤더니 step-down 방식으로 처리함.

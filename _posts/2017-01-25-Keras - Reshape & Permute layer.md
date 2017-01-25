@@ -47,5 +47,15 @@ keras.layers.core.Permute(dims)
 따라서 일반적으로 permute 처리를 해주어야 한다.  
 만약 `th` ordering을 사용하고 있었다면 안해줘도 될 것 같다.  
 
+참고할 것은 0 축은 batch에 대한 것이니까 그 외에 축에 대해서 섞는 설정을 해주면 된다.  
+아래 예제를 보면 다음과 같다.
+
+```python
+model = Sequential()
+model.add(Permute((2, 1), input_shape=(10, 64)))
+# now: model.output_shape == (None, 64, 10)
+# note: `None` is the batch dimension
+```
+
 물론 model 안에서 reshape, permute layer를 사용했으니까 label도 그에 맞도록 수정해주어야 한다.
 

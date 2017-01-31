@@ -98,17 +98,17 @@ $x_{ij}$는 i번째 문장의 j번째 단어를 의미한다.
 
 
 ### Temporal encoding
-
+(TBD)
 
 ![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/3E319E6B-FB04-47A1-9182-DBD437A9FE34.png)
 
 
 ### Injecting random noise
-
+(TBD)
 
 
 ### Linear start
-
+(TBD)
 
 
 ### joint

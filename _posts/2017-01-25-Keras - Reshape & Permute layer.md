@@ -6,7 +6,7 @@ category:
 tags: [deep learning, paper]
 ---
 # Keras - Reshape & Permute layer
-링크는 …
+링크는 …  
 [Core Layers - Keras Documentation](https://keras.io/layers/core/#reshape)
 
 auto-encoder와 다르게 segmentation은 결국 x,y (or z) 좌표에 대해서 각각 class를 비교해야한다.  

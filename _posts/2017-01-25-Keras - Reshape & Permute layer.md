@@ -3,7 +3,7 @@ layout: post
 title: "Keras - Reshape & Permute layer"
 description: ""
 category:
-tags: [deep learning, paper]
+tags: [deep learning, keras]
 ---
 # Keras - Reshape & Permute layer
 링크는 …  

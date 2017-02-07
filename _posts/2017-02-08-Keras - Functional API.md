@@ -8,7 +8,7 @@ tags: [deep learning, keras]
 
 # Keras - Functional API
 링크는 …  
-https://keras.io/getting-started/functional-api-guide/
+[Functional API Guide](https://keras.io/getting-started/functional-api-guide/)
 
 ## Sequential model & Functional API
 keras에는 두가지 방식의 모델 생성이 가능하다.  
@@ -92,7 +92,7 @@ def _bn_relu(input):
     return Activation("relu")(norm)
 ```
 
-와 같다. 이렇게 되면 중복되는 block은 간단하게 정리가 가능해진다.
+와 같다. 이렇게 되면 중복되는 block은 간단하게 정리가 가능해진다.  
 resnet도 몇개의 block을 정의만 하면 간단하게 구현 가능해진다는 점!!!  
 이 functional API의 장점이다.
 

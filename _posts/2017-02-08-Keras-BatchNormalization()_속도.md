@@ -20,7 +20,7 @@ tags: [deep learning, keras]
 
 ## Keras에 구현된 BatchNormalization()
 keras에 보면 batch normalization이 구현되어 있다.  
-링크는.. 
+링크는..  
 [keras - batch normalization](https://keras.io/layers/normalization/)
 
 ```python

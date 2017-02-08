@@ -225,6 +225,10 @@ pre {
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
+code {
+  background: #EBEBE5;
+  border: 1px solid #000000;
+}  
 
 code,
 kbd,
@@ -232,8 +236,6 @@ pre,
 samp {
   font-family: Helvetica;
   font-size: 1em;
-  background: #EBEBE5;
-  border: 1px solid #000000;
 }
 
 /* Forms

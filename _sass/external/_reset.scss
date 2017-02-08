@@ -226,15 +226,17 @@ pre {
  * Address odd `em`-unit font size rendering in all browsers.
  */
 code {
+  font-family: "Lucida Console";
   background: #EBEBE5;
-  border: 1px solid #999999;
+  font-size: 1em;
 }  
 
-code,
 kbd,
 pre,
 samp {
-  font-family: Helvetica;
+  background: #EBEBE5;
+  border: 1px solid #999999;
+  font-family: "Lucida Console";
   font-size: 1em;
 }
 

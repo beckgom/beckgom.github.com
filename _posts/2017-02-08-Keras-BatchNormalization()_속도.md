@@ -27,7 +27,7 @@ keras에 보면 batch normalization이 구현되어 있다.
 keras.layers.normalization.BatchNormalization(epsilon=0.001, mode=0, axis=-1, momentum=0.99, weights=None, beta_init='zero', gamma_init='one', gamma_regularizer=None, beta_regularizer=None)
 ```
 
-![](/assets/2017-02-08-Keras-BatchNormalization()_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%83%E1%85%A9/3157177D-8ED3-45EB-92B6-F08F1D5CB00D.png)
+![](/assets/2017-02-08-Keras-BatchNormalization()/3157177D-8ED3-45EB-92B6-F08F1D5CB00D.png)
 
 argument는 여러가지가 있지만 일반적으로 따로 설정하지 않고 사용해도 무방하다.   
 default는 feature wise norm으로 되어 있다.

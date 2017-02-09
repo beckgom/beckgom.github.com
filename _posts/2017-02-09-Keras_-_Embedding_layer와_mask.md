@@ -8,7 +8,7 @@ tags: [deep learning, keras]
 
 ## Embedding layer 
 
-![](/assets/2017-02-09-Keras_-_Embedding_layer%E1%84%8B%E1%85%AA_mask/38C1A1F6-7DD8-43A6-A242-5E104E05E31E.png)
+![](/assets/2017-02-09-Keras_-_Embedding_layer_mask/38C1A1F6-7DD8-43A6-A242-5E104E05E31E.png)
 
 embedding layer는 실제로 text를 처리하는데 초기에 사용되는 layer다.  
 word2vec에 대한 결과를 받는 부분이라고 보면 되고,   
@@ -60,7 +60,7 @@ mask_zero를 True로 하면 내부적으로 mask 정보가 다음 layer로 전�
 실제 훈련을 할 때도 loss에 이 정보를 활용해서 처리해주게 된다.   
 다만 설명을 보면 알 수 있다시피,   
 
-![](/assets/2017-02-09-Keras_-_Embedding_layer%E1%84%8B%E1%85%AA_mask/2D590B8D-5420-4E6A-8059-7A11982FF4CC.png)
+![](/assets/2017-02-09-Keras_-_Embedding_layer_mask/2D590B8D-5420-4E6A-8059-7A11982FF4CC.png)
 
 
 하위에 연결된 layer에서 mask 정보를 지원하지 않는다고 하면, 아예 exception을 발생시켜버린다.   

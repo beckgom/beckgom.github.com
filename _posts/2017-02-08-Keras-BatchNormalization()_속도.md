@@ -6,8 +6,10 @@ category:
 tags: [deep learning, keras]
 ---
 # Keras_-_BatchNormalization()_속도
+
 ## BatchNormalization()이란..
-잘 정리된 내용은 …
+
+잘 정리된 내용은 …  
 [batch normalization 설명](https://shuuki4.wordpress.com/2016/01/13/batch-normalization-설명-및-구현/)
 
 간략히 정리하면,

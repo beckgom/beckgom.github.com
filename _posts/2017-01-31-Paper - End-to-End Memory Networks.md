@@ -5,7 +5,6 @@ description: ""
 category:
 tags: [deep learning, paper]
 ---
-
 # Paper - End-to-End Memory Networks
 링크는…
 
@@ -73,7 +72,6 @@ embedding matrix 3개 (입력, 출력 메모리, query)를 훈련으로 얻어�
 이 중에 본 논문에서는 adjacent 방식을 사용했다. 아무래도 이 방식이 조금 더 성능 향상에 도움이 되는 듯.  
 
 ## 그 외의 detail 
-
 ### BoW 와 position encoding
 
 위에서 간단하게 언급이 나왔던 $m_i$와 $c_i$를 어떻게 만드느냐에 대한 내용이다.
@@ -94,22 +92,38 @@ $x_{ij}$는 i번째 문장의 j번째 단어를 의미한다.
 
 ![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/BEB1B33C-D99B-4C4A-8AD8-E65B3F7B0FAC.png)
 
+그런데 scale인 $l_j$ 가 vector를 가지게 되고, 이걸 element-wise product을 통해서 값을 얻는다.  
+실제로 $l_j$는 아래와 같은 형태의 값을 가지게 된다.  
 
+![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/86E2AB81-E0E9-44F6-ADC4-499BA624205D.png)
 
-
+symmetric 성질을 가지고 있으며 word의 위치에 따라서 각각 $m_i$에 다른 가중치로 vector 영향을 주게 된다.  
 
 ### Temporal encoding
-(TBD)
+
+실제로 워드 단위의 위치도 중요하지만 문장의 순서도 중요하게 된다.  
+예시에서 나온 sam의 위치를 찾는 질문을 보면 문장의 순서에 답이 영향을 받기 때문이다.  
+따라서 이러한 문장별, weight을 주기 위해서 $T_A(i)$ vector 를 추가적으로 $m_i$를 구할 때 넣는다.  
+다만, 여기서는 position encoding과 달리 정해진 방식으로 하는 것이 아니라,  
+task별로 문장 순서의 중요도가 달라지기 때문에 이 부분은 훈련을 통해서 획득한다.
 
 ![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/3E319E6B-FB04-47A1-9182-DBD437A9FE34.png)
 
 
+
 ### Injecting random noise
-(TBD)
+여전히 모르겠다.
 
 
 ### Linear start
-(TBD)
+훈련 trick 중에 하나인데, 초반에는 softmax를 뺀 상태에서 훈련을 하다가  
+어느정도 훈련이 끝난 상태에서 softmax를 추가해서 사용하는 방법이다.  
+
+실제로 softmax에는 trainable parameter가 존재하지 않기 때문에 중간에 삽입하더라도  
+모델이 심각하게 영향을 받거나 하진 않겠으나, 그럼애도 훈련받는 나머지 parameter들은 영향을 받는다.
+
+왜 좋은지는 모르겠으나 (아직 설명을 못찾음)  
+실험 결과를 보면 LS를 적용했을 때 조금 더 성능이 향상된 것으로 나타나는 것으로 소개하고 있다.
 
 
 ### joint
@@ -140,6 +154,3 @@ Keras로 한번 구현해보면 좋을 것 같다.
 링크는…   
 [keras/babi_memnn.py at master · fchollet/keras · GitHub](https://github.com/fchollet/keras/blob/master/examples/babi_memnn.py)
 
-
-
-#not_pub

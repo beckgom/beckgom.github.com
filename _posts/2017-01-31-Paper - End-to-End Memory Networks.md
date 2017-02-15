@@ -38,21 +38,21 @@ Neural Turing machine과 비슷하다고 볼 수도 있겠다.
 하지만 우선 (a)만 이해하면 된다. 그리고 (b)는 stacking해 놓은 것이라고 보면 되겠다.
 
 그림만 보고 간단하게 정리하면  
-근거 문장 ($x_i$)는 질문이 들어오기 전에 두개의 메모리로 들어가는데,   
+근거 문장 ($$x_i$$)는 질문이 들어오기 전에 두개의 메모리로 들어가는데,   
 각각 다른 embedding matrix를 통해서 들어간다.
 
-$m_i$와 $c_i$를 구하는 방식은 뒤에서 `BoW 방식`이나 `position encoding 방식`이냐에 따라서 조금 달라지기 때문에 나중에 설명하도록 하고,
+$$m_i$$와 $$c_i$$를 구하는 방식은 뒤에서 `BoW 방식`이나 `position encoding 방식`이냐에 따라서 조금 달라지기 때문에 나중에 설명하도록 하고,
 
-$m_i$와 $c_i$가 구해졌다고 쳤을 때, 먼저 메모리 출력을 구하는 방식은 다음 식과 같다.
+$$m_i$$와 $$c_i$$가 구해졌다고 쳤을 때, 먼저 메모리 출력을 구하는 방식은 다음 식과 같다.
 
 ![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/CAFC2D2E-152F-4423-9D4C-8EC2110F3493.png)
 
-여기서 $p_i$는 입력 메모리와 query에 의해 계산되는 값이다.  
+여기서 $$p_i$$는 입력 메모리와 query에 의해 계산되는 값이다.  
 마치 pointing하는 역할을 한다고 보면 될 듯하고, 구하는 방식은 다음과 같다.
 
 ![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/8AD01DEE-951E-4FE8-BE00-3EEEEB1A2DE3.png)
 
-여기서 $u^T$는 query 문장이 embedding을 통해서 변환된 vector이다.
+여기서 $$u^T$$는 query 문장이 embedding을 통해서 변환된 vector이다.
 
 최종적으로는 다시 query와 메모리 출력을 이용하여 우리가 원하는 답변을 생성한다.
 
@@ -66,7 +66,7 @@ embedding matrix 3개 (입력, 출력 메모리, query)를 훈련으로 얻어�
 ## Stacked memory networks
 여러 개 layer를 쌓았을 때, weight을 묶어서 처리할 수 있다. 본 논문에서는 2가지 방식을 제안한다.
 
-1. Adjacent: 근접한 녀석을 묶는 다는 것이다. 즉, 현재 layer의 출력 메모리 embedding $C^{k}$와 상위 layer의 입력 메모리 embedding $A^{k+1}$를 같은 값으로 사용하는 것이다. 
+1. Adjacent: 근접한 녀석을 묶는 다는 것이다. 즉, 현재 layer의 출력 메모리 embedding $$C^{k}$$와 상위 layer의 입력 메모리 embedding $$A^{k+1}$$를 같은 값으로 사용하는 것이다. 
 2. Layer-wise(RNN-like): 모든 layer의 같은 동작을 하는 녀석들을 같은 값으로 사용하는 것이다. 이렇게 될 경우에 RNN과 같은 구조라고 볼 수 있다. 잠깐 생객해보면, (b)를 90도 눕혀서 보면 RNN 처럼 볼 수 있다. query가 올라가는 path를 hidden으로 보면 비슷하다고 볼 수 있으려나.. 
 
 이 중에 본 논문에서는 adjacent 방식을 사용했다. 아무래도 이 방식이 조금 더 성능 향상에 도움이 되는 듯.  
@@ -74,8 +74,8 @@ embedding matrix 3개 (입력, 출력 메모리, query)를 훈련으로 얻어�
 ## 그 외의 detail 
 ### BoW 와 position encoding
 
-위에서 간단하게 언급이 나왔던 $m_i$와 $c_i$를 어떻게 만드느냐에 대한 내용이다.
-$x_{ij}$는 i번째 문장의 j번째 단어를 의미한다.
+위에서 간단하게 언급이 나왔던 $$m_i$$와 $$c_i$$를 어떻게 만드느냐에 대한 내용이다.
+$$x_{ij}$$는 i번째 문장의 j번째 단어를 의미한다.
 
 ####  BoW
 간단하게 한 문장 내의 모든 word에 대한 vector를 모두 더하는 것이다.
@@ -86,24 +86,24 @@ $x_{ij}$는 i번째 문장의 j번째 단어를 의미한다.
 이러한 단점을 보완하기 위해서 제안한 방식이 position encoding이다.
 
 #### Position encoding
-수식을 보면알겠지만, word의 위치에 따라 다른 scale을 붙여서 $m_i$를 생성한다. 
+수식을 보면알겠지만, word의 위치에 따라 다른 scale을 붙여서 $$m_i$$를 생성한다. 
 
 ![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/FE09E827-2D43-4751-93A7-8FB8C4467883.png)
 
 ![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/BEB1B33C-D99B-4C4A-8AD8-E65B3F7B0FAC.png)
 
-그런데 scale인 $l_j$ 가 vector를 가지게 되고, 이걸 element-wise product을 통해서 값을 얻는다.  
-실제로 $l_j$는 아래와 같은 형태의 값을 가지게 된다.  
+그런데 scale인 $$l_j$$ 가 vector를 가지게 되고, 이걸 element-wise product을 통해서 값을 얻는다.  
+실제로 $$l_j$$는 아래와 같은 형태의 값을 가지게 된다.  
 
 ![](/assets/2017-01-31-Paper%20-%20End-to-End%20Memory%20Networks/86E2AB81-E0E9-44F6-ADC4-499BA624205D.png)
 
-symmetric 성질을 가지고 있으며 word의 위치에 따라서 각각 $m_i$에 다른 가중치로 vector 영향을 주게 된다.  
+symmetric 성질을 가지고 있으며 word의 위치에 따라서 각각 $$m_i$$에 다른 가중치로 vector 영향을 주게 된다.  
 
 ### Temporal encoding
 
 실제로 워드 단위의 위치도 중요하지만 문장의 순서도 중요하게 된다.  
 예시에서 나온 sam의 위치를 찾는 질문을 보면 문장의 순서에 답이 영향을 받기 때문이다.  
-따라서 이러한 문장별, weight을 주기 위해서 $T_A(i)$ vector 를 추가적으로 $m_i$를 구할 때 넣는다.  
+따라서 이러한 문장별, weight을 주기 위해서 $$T_A(i)$$ vector 를 추가적으로 $$m_i$$를 구할 때 넣는다.  
 다만, 여기서는 position encoding과 달리 정해진 방식으로 하는 것이 아니라,  
 task별로 문장 순서의 중요도가 달라지기 때문에 이 부분은 훈련을 통해서 획득한다.
 

@@ -32,6 +32,7 @@ LeakRelu나 등등 참 많은 activation이 소개되고 있다. 이거에 따�
 
 
 ## 일부 간단 설명
+
 ### LeakyRelu
 
 ![](/assets/2017-02-15-Keras_-_Advanced_Activations_layer/34C3D5E1-6B97-4666-89AF-D10BD6B10F3D.png)

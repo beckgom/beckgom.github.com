@@ -72,6 +72,7 @@ embedding matrix 3개 (입력, 출력 메모리, query)를 훈련으로 얻어�
 이 중에 본 논문에서는 adjacent 방식을 사용했다. 아무래도 이 방식이 조금 더 성능 향상에 도움이 되는 듯.  
 
 ## 그 외의 detail 
+
 ### BoW 와 position encoding
 
 위에서 간단하게 언급이 나왔던 $$m_i$$와 $$c_i$$를 어떻게 만드느냐에 대한 내용이다.

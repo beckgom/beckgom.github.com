@@ -118,8 +118,8 @@ $$P_{\theta}()$$는 기존의 classification을 구하는 방식과 동일하다
 
 ![](/assets/2017-03-13-Paper_-_Matching_network_for_one_shot_learning/B055524F-C311-4BC2-91A6-62150F581498.png)
 
-1623개 문자 (각 20개씩..)
-one shot learning에 적합한 Database
+1623개 문자 (각 20개씩..)  
+one shot learning에 적합한 Database  
 
 ![](/assets/2017-03-13-Paper_-_Matching_network_for_one_shot_learning/1E58ABE6-10DA-487C-933B-6B98791DFC09.png)
 

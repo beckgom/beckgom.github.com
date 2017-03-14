@@ -157,10 +157,10 @@ hyper-parameter 로 되어 있는 tstep에 따라서 성능이 차이남(예상)
 
 
 ## References
-[1606.04080 Matching Networks for One Shot Learning](https://arxiv.org/abs/1606.04080)
-[Matching networks for one shot learning](https://www.slideshare.net/KazukiFujikawa/matching-networks-for-one-shot-learning-71257100)
-[paper-notes/matching_networks.md at master · karpathy/paper-notes · GitHub](https://github.com/karpathy/paper-notes/blob/master/matching_networks.md)
-[GitHub - zergylord/oneshot](https://github.com/zergylord/oneshot)
+[1606.04080 Matching Networks for One Shot Learning](https://arxiv.org/abs/1606.04080)  
+[Matching networks for one shot learning](https://www.slideshare.net/KazukiFujikawa/matching-networks-for-one-shot-learning-71257100)  
+[paper-notes/matching_networks.md at master · karpathy/paper-notes · GitHub](https://github.com/karpathy/paper-notes/blob/master/matching_networks.md)  
+[GitHub - zergylord/oneshot](https://github.com/zergylord/oneshot)  
 
 
 

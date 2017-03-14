@@ -1,7 +1,7 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://beckgom.github.com"
-
+encoding: UTF-8
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta

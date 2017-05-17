@@ -37,23 +37,24 @@ Soft targets:
 ![](/assets/2017-05-16-Paper%20-%20Distilling%20the%20Knowledge%20in%20a%20Neural%20Network/CE97D9D1-2226-4E19-A942-C0D4518A9A81.png)
 
 ## Distillation
-기본적으로 NN은 softmax로 분류 기능을 하는데 세부적으로 보면 다음과 같다.
+기본적으로 NN은 softmax로 분류 기능을 하는데 세부적으로 보면 다음과 같다.  
 ![](/assets/2017-05-16-Paper%20-%20Distilling%20the%20Knowledge%20in%20a%20Neural%20Network/3893B469-235F-4A43-8470-E7EBFACB2296.png)
 조금 다른 점은 $$T$$라고 하는 temperature가 추가되어 있다.   
-이게 RL이나 statistical mechanics 에서 사용하는 방식이라 함.
+이게 RL이나 statistical mechanics 에서 사용하는 방식이라 함.  
 
 ## Distillation (2)
-위키를 찾아보면
+위키를 찾아보면  
 ![](/assets/2017-05-16-Paper%20-%20Distilling%20the%20Knowledge%20in%20a%20Neural%20Network/8966FECB-19F0-4F3A-BB33-EC85E8D96827.png)
 
-$$T$$를 기능적으로만 보면 값이 커지면 상대적으로 값들이 차이가 안날테니 even하게 빠질테고, 값이 작으면 (1보다 작으면) 조금의 차이가 더 강조되어 확률값으로 반영되게 된다. 값이 커질수록 나오는 확률 값들은 softer해진다고 볼 수 있다.
+$$T$$를 기능적으로만 보면 값이 커지면 상대적으로 값들이 차이가 안날테니 even하게 빠질테고, 값이 작으면 (1보다 작으면) 조금의 차이가 더 강조되어 확률값으로 반영되게 된다.  
+값이 커질수록 나오는 확률 값들은 softer해진다고 볼 수 있다.
 
 ## Distillation (3)
 > The same high temperature is used when training the distilled model, but after it has been trained it uses a temperature of 1.  
 
-이 내용을 보면 압축 모델 (distilled model)을 훈련할 때는 high temperature로 하고 사용할때 deploy할 때는 1로 설정하고 사용하는 걸로..
+이 내용을 보면 압축 모델 (distilled model)을 훈련할 때는 high temperature로 하고 사용할때 deploy할 때는 1로 설정하고 사용하는 걸로..  
 
-앙상블 모델 가지고 transfer set이라는 것을 만든다. 그런데 이걸 만들 때 쓰는 것 자체가 high $$t$$를 가지고 만든다. 그리고 그걸 가지고 distilled model을 훈련한다.
+앙상블 모델 가지고 transfer set이라는 것을 만든다. 그런데 이걸 만들 때 쓰는 것 자체가 high $$t$$를 가지고 만든다. 그리고 그걸 가지고 distilled model을 훈련한다.  
 
 
 
@@ -101,23 +102,22 @@ hidden: 30 -> 2.5 ~ 4 정도의 $$t$$가 괜찮음.
 * 
 
 ## 실험 2
-음성인식에 적용.
-![](/assets/2017-05-16-Paper%20-%20Distilling%20the%20Knowledge%20in%20a%20Neural%20Network/B536E55E-1C4C-48DD-BB5A-6811FC8F47E5.png)
+음성인식에 적용.  
+![](/assets/2017-05-16-Paper%20-%20Distilling%20the%20Knowledge%20in%20a%20Neural%20Network/B536E55E-1C4C-48DD-BB5A-6811FC8F47E5.png)  
 결과를 보면 하나의 모델로 만들었음에도 앙상블처럼 성능향상이 있다.
 
 ## 실험 3
-일부 데이터
-![](/assets/2017-05-16-Paper%20-%20Distilling%20the%20Knowledge%20in%20a%20Neural%20Network/97DA9287-10A9-476B-9164-A0F92F956E81.png)
+일부 데이터  
+![](/assets/2017-05-16-Paper%20-%20Distilling%20the%20Knowledge%20in%20a%20Neural%20Network/97DA9287-10A9-476B-9164-A0F92F956E81.png)  
 결과를 보면 3프로 가지고 했음에도 많이 성능을 따라감을 확인할 수 있다.
 
 ## Conclusion
 * __Ensemble이나 large 에서부터 작은 모델로 학습 잘 된다.__
 * __이를 위해 soft targets을 훈련에 사용할 것을 제안했다.__
-
 * __나머지(specialist)는 잘 모르겠음;;;;__
 
 
 ## References
-[deep model compression](https://ucbrise.github.io/cs294-rise-fa16/assets/slides/ModelCompression_RISE.pdf)
+[deep model compression](https://ucbrise.github.io/cs294-rise-fa16/assets/slides/ModelCompression_RISE.pdf)  
 [dark knowledge](http://www.ttic.edu/dl/dark14.pdf)
 

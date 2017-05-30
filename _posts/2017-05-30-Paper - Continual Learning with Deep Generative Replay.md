@@ -45,11 +45,13 @@ T-brain에서 낸 논문 @.@
 우선은 거의 유사한 task지만 database가 다른 MNIST 숫자와 SVHN을 가지고 continual learning을 했다.
 
 ![](/assets/2017-05-30-Paper%20-%20Continual%20Learning%20with%20Deep%20Generative%20Replay/79981664-4449-493E-85E0-5E0AF37CBF78.png)
+
 ER의 경우 generative model을 사용한 것이 아니라 직접 datasbase를 사용한 것이고 (upper bound) GR이 replay를 사용한 것이다.  
 비교를 해보면 task change가 일어난 이후에도 각각에 대한 분류가 여전히 잘되고 있는 것을 확인할 수 있다.
 
 
 ![](/assets/2017-05-30-Paper%20-%20Continual%20Learning%20with%20Deep%20Generative%20Replay/2374193B-CBDE-4766-9DC5-2E4144170819.png)
+
 MNIST에서 2개씩 모아서 다른 task로 정의하고 continual learning을 걸더라도 replay를 사용하지 않은 것과 비교하면 효과를 쉽게 볼 수 있겠다.
 
 
@@ -59,6 +61,7 @@ MNIST에서 2개씩 모아서 다른 task로 정의하고 continual learning을 
 
 > DB 대신 Generative model을 이용하여 continual learning을 하더라도 잘 된다!!  
 
-물론 그 외에 실험적 내용이라든지 기존에 제안됐던 내용들에 대한 review 등도 눈여겨 볼만하다. 그리고 결과에 대한 해석도 상세히 서술하고 있다. 
+물론 그 외에 실험적 내용이라든지 기존에 제안됐던 내용들에 대한 review 등도 눈여겨 볼만하다.  
+그리고 결과에 대한 해석도 상세히 서술하고 있다. 
 
 처음에는 이 논문 다른 분이 정리해주신 것을 듣고도 개인적으로 잘못 생각해서 엉뚱한 그림을 그리고 있었는데 저자분께 문의하니 친절히 매우 빨리 답장을 주셔서 이해하는데 큰 도움이 됐다. 자세히 못읽고 물어봐서 죄송하긴 했지만 ㅠ.ㅠ

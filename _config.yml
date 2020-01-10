@@ -2,7 +2,7 @@ title:              Beckgom's
 email:              cpumaker_at_gmail_dot_com
 description:        A Blog Theme by Start Bootstrap
 author:             Young Han Lee
-baseurl:            "/blog"
+baseurl:            
 url:                "https://beckgom.github.io"
 
 # Social Profiles

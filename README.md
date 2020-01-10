@@ -1,2 +1,1 @@
-# Beckgom's blog
-
+# beckgom.github.io

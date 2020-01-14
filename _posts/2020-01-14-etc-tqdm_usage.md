@@ -10,7 +10,7 @@ tags: [etc]
 
 `tqdm`은 loop를 많이 돌려서 실험을 하는 경우에 매우 유용한 패키지이다.
 
-![](/assets/2020-01-14/tqdm.png)
+<img src="http://beckgom.github.io/assets/2020-01-14/tqdm.png" width="640">
 
 얼마나 남았는지도 잘 알 수 있고, 어느정도 속도로 얼마나 시간이 남았는지 알 수 있으니까 이것만으로도 매우 훌륭하게 사용할 수 있다.
 

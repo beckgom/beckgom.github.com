@@ -73,7 +73,7 @@
     };
 
     Slideshow.prototype.src = function(index) {
-      return "/images/slideshow/" + (this.filename(index)) + ".png";
+      return "/img/" + (this.filename(index)) + ".jpg";
     };
 
     Slideshow.prototype.imgHtml = function(index) {

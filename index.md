@@ -3,7 +3,6 @@ layout: home
 title: Home
 tagline: Supporting tagline
 background: '/img/bg-index.jpg'
-
 ---
 
 <!--

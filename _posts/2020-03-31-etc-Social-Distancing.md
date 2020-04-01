@@ -4,7 +4,7 @@ title: "사회적 거리두기"
 description: ""
 category:
 tags: [etc]
-background: ''
+background: 'https://media.defense.gov/2020/Mar/20/2002267790/780/780/0/200319-F-PJ004-1012.JPG'
 ---
 
 ## 가족의 귀국으로 자발적 거리두기 시행

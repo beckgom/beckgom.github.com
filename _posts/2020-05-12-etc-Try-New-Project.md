@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "새로운 프로젝트에 도전하다. 그러나 떨어지다."
+title: "새로운 프로젝트에 도전하다."
 description: ""
 category:
 tags: [etc]
-background:https://www.personneltoday.com/wp-content/uploads/sites/8/2009/09/failure.jpg
+background: 'https://www.personneltoday.com/wp-content/uploads/sites/8/2009/09/failure.jpg'
 ---
 
 ## 새로운 과제에 도전!
